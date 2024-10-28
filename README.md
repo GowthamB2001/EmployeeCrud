@@ -53,20 +53,22 @@ dotnet restore
 Database Configuration
 Set up the SQL Server Database:
 
-Update the appsettings.json file in the root directory with your database connection string:
+# Update the appsettings.json file in the root directory with your database connection string:
 json
 Copy code
 "ConnectionStrings": {
     "DefaultConnection": "Server=your_server;Database=your_database;Trusted_Connection=True;"
 }
-Apply migrations: Run the following command to create the database tables using Entity Framework migrations:
+
+# Apply migrations: Run the following command to create the database tables using Entity Framework migrations:
 
 bash
 Copy code
 dotnet ef database update
 Seed data (optional): Add initial data if needed through the DbInitializer in the Startup.cs file or directly via SQL scripts.
 
-Usage
+# Usage
+
 Run the application:
 
 bash
@@ -76,7 +78,7 @@ or use Visual Studio to start the application.
 
 Access the application: Open a web browser and navigate to http://localhost:5000 or the port specified in your configuration.
 
-Test CRUD operations:
+# Test CRUD operations:
 
 Use the navigation bar to access different sections of the application.
 Perform Create, Read, Update, and Delete operations.
@@ -88,7 +90,7 @@ DELETE /items/{id}: Delete an item
 Screenshots
 Include screenshots of your application's main pages here.
 
-Contributing
+# Contributing
 Contributions are welcome! Please follow these steps to contribute:
 
 Fork the project.
@@ -96,7 +98,8 @@ Create a feature branch (git checkout -b feature/YourFeature).
 Commit your changes (git commit -m 'Add your message').
 Push to the branch (git push origin feature/YourFeature).
 Open a Pull Request.
-License
+
+# License
 Distributed under the MIT License. See LICENSE for more information.
 
 This README file provides a structured overview of the project and can be easily modified as you add more features or make updates.
