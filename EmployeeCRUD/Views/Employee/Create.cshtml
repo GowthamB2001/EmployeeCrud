@@ -1,0 +1,71 @@
+﻿@model Employee
+
+
+
+<link href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
+<link href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css" />
+
+
+<div class="container shadow p-5">
+    <div class="row pb-2">
+        <h2>Add Employee</h2>
+    </div>
+<form method="post">
+        <div asp-validation-summary="All"></div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="Name">Employee Name</label>
+                <input type="text" class="form-control mb-3" asp-for="Name" placeholder="Enter Name" autocomplete="off">
+                <span asp-validation-for="Name" class=" alert-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="Designation"> Desingation</label>
+                <input type="text" class="form-control mb-3" asp-for="Designation" placeholder="Enter Desingation" autocomplete="off">
+                <span asp-validation-for="Name" class=" alert-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="Address"> Address</label>
+                <input type="text" class="form-control mb-3" asp-for="Address" placeholder="Enter Address" autocomplete="off">
+                <span asp-validation-for="Name" class=" alert-danger"></span>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label asp-for="RecordCreatedOn">Created On</label>
+                <input type="datetime-local" class="form-control" asp-for="RecordCreatedOn">
+                <span asp-validation-for="RecordCreatedOn" class=" alert-danger"></span>
+            </div>
+            </div>
+
+        <button onclick="Create()" type="submit" class="btn btn-lg btn-primary p-2"><i class="bi bi-file-plus-fill"></i>Save</button>
+        <a asp-controller="Employee" asp-action="Index" class="btn btn-lg btn-warning p-2">Back To List</a>
+
+
+</form>
+ 
+</div>
+    @*//for front end validations*@
+
+    @section Scripts {
+        @{
+                <partial name="_ValidationScriptsPartial" />
+                
+        }
+    }
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js"</script>
+<script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"</script>
+<script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+<script src="~/js/script.js"></script>
+
+
+<script>
+    function Create() {
+        Swal.fire({
+            title: "Good job!",
+            text: "You clicked the button!",
+            icon: "success"
+
+        });
+    }
+</script>
